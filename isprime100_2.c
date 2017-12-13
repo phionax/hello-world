@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <windows.h>
-// 百科质数词条中的c语言求10000以内质数范例，其实可读性差而且跑下来以后没有isprime快。 
+// 百科质数词条中的c语言求10000以内质数范例，其实可读性差而且跑下来以后没有isprime快。 很慢。而且2都不算质数，错了。 
 int main()
 {
     double x,y,i;

@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 int main(int argc, char const *argv[])
 {
@@ -8,8 +9,9 @@ int main(int argc, char const *argv[])
 	for (int i = 2; k < count; i++)
 	{
 		isprime = 1;
-		for (int j = 2; j < (i/2); j++)
-		// 此处之前直接用 j < i, 当运行数量较多的时候，花费时间有明显区别。 
+		for (int j = 2; j < (sqrt(i)+1); j++)
+		// 此处之前直接用 j < i, 当运行数量较多的时候，花费时间有明显区别。 后来自己想用i/2，提速不少；后来又看到用i的开方来作为判断临界值，想通后再跑又有质的提升，以这个程序为例，运行选前50000个质数，从35秒缩短到5秒。
+		//后来根据结果，不管是i/2还是sqrt(i)，都应再加1，不然会出现4和9都被算作质数的情况出现。 
 		{
 			if ( i % j == 0)
 			{
